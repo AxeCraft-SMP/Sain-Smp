@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAIN SMP | Server Status</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .status-container {
+      max-width: 700px;
+      margin: 60px auto;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .status-card {
+      background: #151b2b;
+      border: 1px solid #27334b;
+      border-radius: 18px;
+      padding: 30px;
+      margin-top: 25px;
+    }
+
+    .online {
+      color: #35e88b;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .status-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .info-box {
+      background: #202a40;
+      padding: 18px;
+      border-radius: 12px;
+    }
+
+    .info-box h3 {
+      color: #a8b8d8;
+      font-size: 14px;
+    }
+
+    .info-box p {
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .copy-btn {
+      background: #3678ff;
+      color: white;
+      border: none;
+      padding: 13px 25px;
+      border-radius: 9px;
+      cursor: pointer;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    @media(max-width: 500px) {
+      .status-info {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>⚔️ SAIN SMP</h1>
+  <p>Server Status</p>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="information.html">Information</a>
+    <a href="status.html">Status</a>
+    <a href="https://discord.gg/uZcuq4xYef">Discord</a>
+  </nav>
+</header>
+
+<main class="status-container">
+
+  <h2>🌍 SERVER STATUS</h2>
+  <p>Check our Minecraft server information.</p>
+
+  <div class="status-card">
+
+    <h2>SAIN SMP</h2>
+    <p class="online">● ONLINE</p>
+
+    <div class="status-info">
+
+      <div class="info-box">
+        <h3>👥 Players Online</h3>
+        <p id="players">Loading...</p>
+      </div>
+
+      <div class="info-box">
+        <h3>🎮 Minecraft Version</h3>
+        <p>All Versions</p>
+      </div>
+
+      <div class="info-box">
+        <h3>🌐 Server IP</h3>
+        <p id="serverIP">AxeCraft.port0.org</p>
+      </div>
+
+      <div class="info-box">
+        <h3>🛡️ Server Type</h3>
+        <p>Survival SMP</p>
+      </div>
+
+    </div>
+
+    <button class="copy-btn" onclick="copyIP()">
+      📋 Copy Server IP
+    </button>
+
+    <p id="message"></p>
+
+  </div>
+
+</main>
+
+<script>
+const ip = "AxeCraft.port0.org";
+
+async function getStatus() {
+  try {
+    const response = await fetch(
+      "https://api.mcsrvstat.us/3/" + ip
+    );
+    const data = await response.json();
+
+    document.querySelector(".online").textContent =
+      data.online ? "● ONLINE" : "● OFFLINE";
+
+    document.querySelector(".online").style.color =
+      data.online ? "#35e88b" : "#ff5555";
+
+    document.getElementById("players").textContent =
+      data.online ? data.players.online + " / " +
+      data.players.max : "0 / 0";
+
+  } catch (error) {
+    document.querySelector(".online").textContent =
+      "● STATUS UNAVAILABLE";
+    document.getElementById("players").textContent =
+      "Unavailable";
+  }
+}
+
+function copyIP() {
+  navigator.clipboard.writeText(ip);
+  document.getElementById("message").textContent =
+    "✅ Server IP copied!";
+}
+
+getStatus();
+setInterval(getStatus, 30000);
+</script>
+
+</body>
+</html>
