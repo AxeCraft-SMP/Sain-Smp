@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAIN SMP | Staff Team</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .team-container {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .team-container h2 {
+      font-size: 32px;
+      color: #ffffff;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      margin-top: 35px;
+    }
+
+    .staff-card {
+      background: #151b2b;
+      border: 1px solid #27334b;
+      border-radius: 18px;
+      padding: 30px 20px;
+      transition: 0.3s;
+    }
+
+    .staff-card:hover {
+      transform: translateY(-8px);
+      border-color: #3678ff;
+    }
+
+    .staff-avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 3px solid #3678ff;
+      margin-bottom: 15px;
+      background: #26344e;
+    }
+
+    .staff-card h3 {
+      color: white;
+      margin: 10px 0;
+    }
+
+    .role {
+      display: inline-block;
+      background: #263d70;
+      color: #8db5ff;
+      padding: 7px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .staff-card p {
+      color: #a8b8d8;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>👑 SAIN SMP</h1>
+  <p>Meet Our Team</p>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="information.html">Information</a>
+    <a href="status.html">Status</a>
+    <a href="team.html">Staff Team</a>
+    <a href="https://discord.gg/uZcuq4xYef">Discord</a>
+  </nav>
+</header>
+
+<main class="team-container">
+
+  <h2>👑 OUR STAFF TEAM</h2>
+  <p>Meet the amazing people behind SAIN SMP!</p>
+
+  <div class="team-grid">
+
+    <div class="staff-card">
+      <img class="staff-avatar"
+      src="https://mc-heads.net/avatar/troll12343/100">
+      <h3>troll12343</h3>
+      <span class="role">OWNER</span>
+      <p>Server Founder & Owner</p>
+    </div>
+
+    <div class="staff-card">
+      <img class="staff-avatar"
+      src="https://mc-heads.net/avatar/SXM_RX7/100">
+      <h3>SXM_RX7</h3>
+      <span class="role">CO-OWNER</span>
+      <p>Server Management</p>
+    </div>
+
+  </div>
+
+  <br><br>
+  <a href="https://discord.gg/uZcuq4xYef">
+    Join Our Discord
+  </a>
+
+</main>
+
+</body>
+</html>
