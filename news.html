@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAIN SMP | News</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .news-container {
+      max-width: 1000px;
+      margin: 55px auto;
+      padding: 20px;
+    }
+
+    .news-heading {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .news-heading h2 {
+      font-size: 36px;
+      color: white;
+    }
+
+    .news-heading p {
+      color: #a8b8d8;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .news-card {
+      background: #151b2b;
+      border: 1px solid #27334b;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .news-card:hover {
+      transform: translateY(-7px);
+      border-color: #3678ff;
+    }
+
+    .news-banner {
+      height: 150px;
+      background: linear-gradient(135deg, #173d78, #111827);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 55px;
+    }
+
+    .news-content {
+      padding: 22px;
+    }
+
+    .news-tag {
+      color: #75a8ff;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .news-content h3 {
+      color: white;
+      margin: 12px 0;
+    }
+
+    .news-content p {
+      color: #a8b8d8;
+      line-height: 1.7;
+    }
+
+    .news-date {
+      color: #71819e;
+      font-size: 12px;
+      margin-top: 18px;
+    }
+
+    .news-empty {
+      color: #a8b8d8;
+      text-align: center;
+      margin-top: 35px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>⚔️ SAIN SMP</h1>
+  <p>Latest News & Updates</p>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="information.html">Information</a>
+    <a href="status.html">Status</a>
+    <a href="team.html">Staff Team</a>
+    <a href="news.html">News</a>
+    <a href="https://discord.gg/uZcuq4xYef">Discord</a>
+  </nav>
+</header>
+
+<main class="news-container">
+
+  <div class="news-heading">
+    <h2>📰 SERVER NEWS</h2>
+    <p>Stay updated with everything happening in SAIN SMP.</p>
+  </div>
+
+  <div class="news-grid">
+
+    <article class="news-card">
+      <div class="news-banner">🎉</div>
+      <div class="news-content">
+        <span class="news-tag">ANNOUNCEMENT</span>
+        <h3>Welcome to SAIN SMP!</h3>
+        <p>Welcome to our official website! Explore our server, meet new players and enjoy your adventure.</p>
+        <div class="news-date">SAIN SMP TEAM</div>
+      </div>
+    </article>
+
+    <article class="news-card">
+      <div class="news-banner">⚔️</div>
+      <div class="news-content">
+        <span class="news-tag">COMMUNITY</span>
+        <h3>Join Our Community</h3>
+        <p>Join our Discord server to connect with players, receive announcements and participate in events.</p>
+        <div class="news-date">SAIN SMP TEAM</div>
+      </div>
+    </article>
+
+    <article class="news-card">
+      <div class="news-banner">🌍</div>
+      <div class="news-content">
+        <span class="news-tag">SERVER</span>
+        <h3>Your Adventure Begins</h3>
+        <p>Explore the world, build your base, make friends and create unforgettable memories!</p>
+        <div class="news-date">SAIN SMP TEAM</div>
+      </div>
+    </article>
+
+  </div>
+
+  <p class="news-empty">
+    More exciting news and updates coming soon!
+  </p>
+
+</main>
+
+<footer style="text-align:center; padding:30px; color:#8291aa;">
+  © 2026 SAIN SMP. All Rights Reserved.
+</footer>
+
+</body>
+</html>
